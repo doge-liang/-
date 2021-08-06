@@ -28,7 +28,7 @@
 <meta property="og:description" content=".center { width: auto; display: table; margin - left: auto; margin - right: auto; } &#x2F;&#x2F; 图片居中 img { position: relative; left: 50%; transform: translateX(-50%); }   第6章-应用层应用层主要协议HTTPHTTP 即超文本传输协议的缩写，是计">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-12T08:01:37.859Z">
+<meta property="article:modified_time" content="2021-04-03T19:39:17.069Z">
 <meta property="article:author" content="doge-liang">
 <meta name="twitter:card" content="summary">
 
@@ -228,10 +228,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-12 00:00:00 / Modified: 16:01:37" itemprop="dateCreated datePublished" datetime="2021-03-12T00:00:00+08:00">2021-03-12</time>
+              <time title="Created: 2021-03-12 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-12T00:00:00+08:00">2021-03-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-04 03:39:17" itemprop="dateModified" datetime="2021-04-04T03:39:17+08:00">2021-04-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -268,11 +274,11 @@ transform: translateX(-50%);
 }
 </style>
 
-<h2 id="第6章-应用层"><a href="#第6章-应用层" class="headerlink" title="第6章-应用层"></a>第6章-应用层</h2><h1 id="应用层主要协议"><a href="#应用层主要协议" class="headerlink" title="应用层主要协议"></a>应用层主要协议</h1><h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p>HTTP 即超文本传输协议的缩写，是计算机网络应用层中用于计算机之间传输文字、图片、音频、视频等多媒体信息的约定和规范。</p>
+<h2 id="第6章-应用层"><a href="#第6章-应用层" class="headerlink" title="第6章-应用层"></a>第6章-应用层</h2><h3 id="应用层主要协议"><a href="#应用层主要协议" class="headerlink" title="应用层主要协议"></a>应用层主要协议</h3><h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><p>HTTP 即超文本传输协议的缩写，是计算机网络应用层中用于计算机之间传输文字、图片、音频、视频等多媒体信息的约定和规范。</p>
 <blockquote>
 <p>可以工作在客户机和服务器之间，也可以工作在服务器和服务器之间。</p>
 </blockquote>
-<h3 id="五大类状态码"><a href="#五大类状态码" class="headerlink" title="五大类状态码"></a>五大类状态码</h3><ul>
+<h5 id="五大类状态码"><a href="#五大类状态码" class="headerlink" title="五大类状态码"></a>五大类状态码</h5><ul>
 <li>1xx，<strong>提示信息</strong>，表示目前处于协议处理的中间状态，还需要后续操作；</li>
 <li>2xx，<strong>成功</strong>，报文到达并正确处理；（200、204、206）<ul>
 <li><code>[200 OK]</code> ：如果是非 <code>HEAD</code> 请求一般都会有 <code>body</code> 数据；</li>
@@ -303,11 +309,36 @@ transform: translateX(-50%);
 </ul>
 </li>
 </ul>
-<h3 id="报文字段"><a href="#报文字段" class="headerlink" title="报文字段"></a>报文字段</h3><ul>
-<li><code>Host</code> ：指定访问域名；</li>
-<li><code>Content-Length</code> ：回应的报文长度；</li>
-<li><code>Connection</code> ：</li>
+<h5 id="报文字段"><a href="#报文字段" class="headerlink" title="报文字段"></a>报文字段</h5><ul>
+<li>[起始行]<ul>
+<li><code>[GET|POST|PUT|DELETE|OPTIONS|TRACE|CONNECT|HEAD] [URL] [HTTP_VERSION]</code><br>一般最常用的是 <code>GET</code> 和 <code>POST</code> 方法，其他了解即可。</li>
 </ul>
+</li>
+<li>[请求头]<ul>
+<li><code>Host</code> ：指定访问域名；</li>
+<li><code>Connection</code> ：</li>
+<li><code>User-agent</code> ：</li>
+<li><code>Accept-language</code> ：</li>
+<li><code>Content-Length</code> ：回应的报文长度；</li>
+</ul>
+</li>
+</ul>
+<p>未完待续。。。</p>
+<h4 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h4><p>由于 HTTP 协议一般是明文传输，所以很容易被攻击者窃取信息或者篡改信息。所以 HTTPS 应运而生， HTTPS = HTTP + SSL/TLS ，即在 HTTP 的基础上添加了身份认证和传输加密的 SSL/TLS 层，保证了传输过程的安全性。</p>
+<p>HTTPS 协议相比 HTTP 只有协议名和端口号的差别， HTTPS 的默认端口号是 443 。而其安全性的保证其实是有 TLS/SSL 提供的。</p>
+<h5 id="TLS-SSL"><a href="#TLS-SSL" class="headerlink" title="TLS/SSL"></a>TLS/SSL</h5><p>TLS(Transport Layer Security) 是 SSL(Secure Socket Layer) 的后续版本，是用于计算机之间身份认证和加密的一种协议。这个协议是一个独立的协议，除了 HTTPS 还有其他协议可以使用这个协议，比如 <code>SMTP</code> 电子邮件协议、 <code>Telnet</code> 远程登陆协议。直到现在 <code>TLS</code> 发布了 1.1 、 1.2 、 1.3 三个版本。</p>
+<p><code>TLS</code> 由</p>
+<ul>
+<li>记录协议</li>
+<li>握手协议</li>
+<li>警告协议</li>
+<li>变更密码规范协议</li>
+<li>扩展协议</li>
+</ul>
+<p>等几个子协议组成，综合使用了对称加密、非对称加密、身份认证等密码学技术。</p>
+<p>为了满足身份认证的要求， <code>TLS</code> 使用非对称加密技术，私钥拥有方可以用自己的私钥对数据进行加密，公钥发布出去，公钥的拥有者可以用公钥去解密数据，将解密的结果和随消息发来的 <code>hashcode</code> 一起验证消息确实是私钥拥有者发出的。</p>
+<p>虽然私钥是私有的，但公钥是谁都可以发布的，所以引入了 <code>CA</code> 即 Certificate Authority ，证书认证机构，为发布的公钥提供认证，解决公钥的信任问题。</p>
+<p>证书申请人在自己的电脑生成一对密钥对，并将公钥和自己的私人信息打包成 <code>CSR</code> 文件，把这份文件交给 <code>CA</code> 机构，用 <code>CA</code> 机构的私钥进行签名，把签名后的证书发回给申请人，于是申请人就可以拿着这个证书去发布自己的公钥了。这样便保证了公钥发布的安全性。</p>
 
     </div>
 
@@ -323,7 +354,7 @@ transform: translateX(-50%);
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/doge-liang-notebook/post/%E9%9B%B6%E9%9B%B6%E7%A2%8E%E7%A2%8E/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="prev" title="微服务">
+    <a href="/doge-liang-notebook/post/%E9%9B%B6%E7%A2%8E/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" rel="prev" title="微服务">
       <i class="fa fa-chevron-left"></i> 微服务
     </a></div>
       <div class="post-nav-item">
@@ -389,7 +420,7 @@ transform: translateX(-50%);
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-number">1.</span> <span class="nav-text">第6章-应用层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E4%B8%BB%E8%A6%81%E5%8D%8F%E8%AE%AE"><span class="nav-number"></span> <span class="nav-text">应用层主要协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E5%A4%A7%E7%B1%BB%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">五大类状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%A5%E6%96%87%E5%AD%97%E6%AE%B5"><span class="nav-number">1.2.</span> <span class="nav-text">报文字段</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-number">1.</span> <span class="nav-text">第6章-应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E4%B8%BB%E8%A6%81%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.1.</span> <span class="nav-text">应用层主要协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP"><span class="nav-number">1.1.1.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BA%94%E5%A4%A7%E7%B1%BB%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">五大类状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8A%A5%E6%96%87%E5%AD%97%E6%AE%B5"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">报文字段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#TLS-SSL"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">TLS&#x2F;SSL</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -403,20 +434,20 @@ transform: translateX(-50%);
       <div class="site-state-item site-state-posts">
           <a href="/doge-liang-notebook/archives/">
         
-          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-count">168</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/doge-liang-notebook/categories/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">69</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/doge-liang-notebook/tags/">
           
-        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-count">73</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

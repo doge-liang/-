@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://doge-liang.github.io/doge-liang-notebook/assets/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/0f67b60edac2e684f6caa566eaa00cc3f77e61cb47f1577796a3e5e6f7e0851a.png">
 <meta property="og:image" content="https://doge-liang.github.io/doge-liang-notebook/assets/%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%A6%82%E8%BF%B0/38152adc677d66f088143c8d3eaacc75b3a9918770a2512a2cb21a5ca21d8e26.png">
 <meta property="article:published_time" content="2020-05-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-17T06:33:23.035Z">
+<meta property="article:modified_time" content="2021-03-21T16:33:04.657Z">
 <meta property="article:author" content="doge-liang">
 <meta property="article:tag" content="区块链概述">
 <meta property="article:tag" content="Hyperledger">
@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-17 14:33:23" itemprop="dateModified" datetime="2021-03-17T14:33:23+08:00">2021-03-17</time>
+                <time title="Modified: 2021-03-22 00:33:04" itemprop="dateModified" datetime="2021-03-22T00:33:04+08:00">2021-03-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -348,15 +348,15 @@ transform: translateX(-50%);
 </ul>
 <h4 id="共识层"><a href="#共识层" class="headerlink" title="共识层"></a>共识层</h4><p>在分布式系统中，如何达成共识是必须要讨论的问题。类似于如何在社会系统中保证民主的同时，实现全社会统一的决策。区块链中的共识层便是封装共识算法的层次。<br>早期的比特币使用的是基于算力的工作量证明机制（PoW,Proof of work），随着区块链技术的发展，越来越多的共识机制被开发出来，例如点点币首创的权益证明机制（PoS,Proof of service），比特股提出的股份证明机制（DPos,Delegated proof of stake）。</p>
 <h5 id="PoW-共识机制"><a href="#PoW-共识机制" class="headerlink" title="PoW 共识机制"></a>PoW 共识机制</h5><p>在比特币系统中，各节点 (即矿工) 基于各自的算力，相互竞争来共同解决一个求解复杂但验证容易的 SHA256 数学难题 (即挖矿), 最快解决该难题的节点将获得<strong>区块记账权</strong>和系统自动生成的<strong>比特币奖励</strong>。</p>
-<p>该数学难题可表述为: 根据当前难度值, 通过搜索求解一个合适的随机数 (Nonce) 使得图 3 区块头各元数据的双 SHA256 哈希值小于或等于目标哈希值。通过灵活调整随机数搜索的难度值 （difficulty） 来控制区块的平均生成时间为 10 分钟左右。</p>
+<p>该数学难题可表述为: 根据当前难度值, 通过搜索求解一个合适的随机数 ( <code>Nonce</code> ) 使得图 3 区块头各元数据的双 SHA256 哈希值小于或等于目标哈希值。通过灵活调整随机数搜索的难度值 （ <code>difficulty</code> ） 来控制区块的平均生成时间为 10 分钟左右。</p>
 <p>具体来讲 PoW 共识过程包括如下四个步骤：</p>
 <ol>
-<li>搜集全网当前尚未确认的交易，增加一个用于发行新比特币的 coinbase 交易，形成当前待确认的交易集合区块体；</li>
-<li>计算区块体交易集合的 Merkle 根记入区块头，并填写区块头的其他元数据，随机数 Nonce 记为 0；</li>
-<li>对 Nonce 进行累加，并计算区块头整体的双 SHA256 值，若小于等于目标哈希值则该 Nonce 为答案，该节点获得记账权，否则继续循环；</li>
-<li>一段时间之后未成功则更新时间戳、交易集合和区块头，继续寻找 Nonce 值；</li>
+<li>搜集全网当前尚未确认的交易，增加一个用于发行新比特币的 <code>coinbase</code> 交易，形成当前待确认的交易集合区块体；</li>
+<li>计算区块体交易集合的 <code>Merkle</code> 根记入区块头，并填写区块头的其他元数据，随机数 <code>Nonce</code> 记为 0；</li>
+<li>对 <code>Nonce</code> 进行累加，并计算区块头整体的双 <code>SHA256</code> 值，若小于等于目标哈希值则该 <code>Nonce</code> 为答案，该节点获得记账权，否则继续循环；</li>
+<li>一段时间之后未成功则更新时间戳、交易集合和区块头，继续寻找 <code>Nonce</code> 值；</li>
 </ol>
-<p>符合要求的区块头哈希值一般有多个前导 0 ，每增加一个前导 0 ，寻找难度就成倍地增加。这是哈希算法的性质使然。目标哈希值的计算是通过使用常数除以 diffculty 值得到的。因此，比特币系统可以通过控制 difficulty 值来控制目标哈希值，从而控制出块概率。</p>
+<p>符合要求的区块头哈希值一般有多个前导 0 ，每增加一个前导 0 ，寻找难度就成倍地增加。这是哈希算法的性质使然。目标哈希值的计算是通过使用常数除以 <code>diffculty</code> 值得到的。因此，比特币系统可以通过控制 <code>difficulty</code> 值来控制目标哈希值，从而控制出块概率。</p>
 <p>通过算力竞赛支撑的 PoW 最显著的缺陷就是巨大的能源消耗，各个节点为了争夺区块记账权而开展的算力竞赛造成了显著的资源浪费。</p>
 <h5 id="PoS-共识机制"><a href="#PoS-共识机制" class="headerlink" title="PoS 共识机制"></a>PoS 共识机制</h5><p>PoS 的提出就是为了解决 PoW 的资源浪费问题的。</p>
 <p>PoS 使用权益证明替代了 PoW 的工作量证明机制，让系统中拥有最高权益的节点作为记账节点。而权益的体现为：币龄（coin days），即特定数量的货币与其最后一次交易的时间长度的乘积，每次交易，节点都会消耗掉一定的币龄。</p>
@@ -628,20 +628,20 @@ Hyperledger 软件套中的一个顶级软件，Python实现
       <div class="site-state-item site-state-posts">
           <a href="/doge-liang-notebook/archives/">
         
-          <span class="site-state-item-count">131</span>
+          <span class="site-state-item-count">168</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/doge-liang-notebook/categories/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">69</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/doge-liang-notebook/tags/">
           
-        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-count">73</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
