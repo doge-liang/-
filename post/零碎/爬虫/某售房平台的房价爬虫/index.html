@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"doge-liang.github.io","root":"/doge-liang-notebook/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="某售房平台的房价爬虫今天某同学因为研究需要，想爬某个售房平台的房价数据做研究用，但由于反爬没能拿到。我拿过链接看了看，发现这种反爬技术比较新奇。 通过 Chrome 浏览器的开发者工具查看，发现这个网站是把房价数据通过图片的形式发送到浏览器的。    打开链接会发现是这样一张图片，通过控制 background-position 属性配合其他的 css 文件可以实现截取某个数字展示的效果。有点像滚">
+  <meta name="description" content="某售房平台的房价爬虫 今天某同学因为研究需要，想爬某个售房平台的房价数据做研究用，但由于反爬没能拿到。我拿过链接看了看，发现这种反爬技术比较新奇。 通过 Chrome 浏览器的开发者工具查看，发现这个网站是把房价数据通过图片的形式发送到浏览器的。  打开链接会发现是这样一张图片，通过控制 background-position 属性配合其他的 css 文件可以实现截取某个数字展示的效果。有点像滚">
 <meta property="og:type" content="article">
 <meta property="og:title" content="某售房平台的房价爬虫">
 <meta property="og:url" content="https://doge-liang.github.io/doge-liang-notebook/post/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/">
 <meta property="og:site_name" content="doge-liang-notebook">
-<meta property="og:description" content="某售房平台的房价爬虫今天某同学因为研究需要，想爬某个售房平台的房价数据做研究用，但由于反爬没能拿到。我拿过链接看了看，发现这种反爬技术比较新奇。 通过 Chrome 浏览器的开发者工具查看，发现这个网站是把房价数据通过图片的形式发送到浏览器的。    打开链接会发现是这样一张图片，通过控制 background-position 属性配合其他的 css 文件可以实现截取某个数字展示的效果。有点像滚">
+<meta property="og:description" content="某售房平台的房价爬虫 今天某同学因为研究需要，想爬某个售房平台的房价数据做研究用，但由于反爬没能拿到。我拿过链接看了看，发现这种反爬技术比较新奇。 通过 Chrome 浏览器的开发者工具查看，发现这个网站是把房价数据通过图片的形式发送到浏览器的。  打开链接会发现是这样一张图片，通过控制 background-position 属性配合其他的 css 文件可以实现截取某个数字展示的效果。有点像滚">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://doge-liang.github.io/doge-liang-notebook/assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/e1e7fcebeaa24f1f2dc7ff4fb165b95d6f0faedb5145a3829821bbb382fa3c3d.png">
 <meta property="og:image" content="https://doge-liang.github.io/doge-liang-notebook/assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/924356a188a6133db4ad57c169097c5553e331a8a14c2d379cbc24b4346a82d6.png">
@@ -261,12 +261,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="某售房平台的房价爬虫"><a href="#某售房平台的房价爬虫" class="headerlink" title="某售房平台的房价爬虫"></a>某售房平台的房价爬虫</h2><p>今天某同学因为研究需要，想爬某个售房平台的房价数据做研究用，但由于反爬没能拿到。我拿过链接看了看，发现这种反爬技术比较新奇。</p>
+        <h2 id="某售房平台的房价爬虫"><a class="markdownIt-Anchor" href="#某售房平台的房价爬虫"></a> 某售房平台的房价爬虫</h2>
+<p>今天某同学因为研究需要，想爬某个售房平台的房价数据做研究用，但由于反爬没能拿到。我拿过链接看了看，发现这种反爬技术比较新奇。</p>
 <p>通过 Chrome 浏览器的开发者工具查看，发现这个网站是把房价数据通过图片的形式发送到浏览器的。</p>
-<p><img src="../../../../assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/e1e7fcebeaa24f1f2dc7ff4fb165b95d6f0faedb5145a3829821bbb382fa3c3d.png" alt="picture 4">  </p>
+<p><img src="../../../../assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/e1e7fcebeaa24f1f2dc7ff4fb165b95d6f0faedb5145a3829821bbb382fa3c3d.png" alt="picture 4" /></p>
 <p>打开链接会发现是这样一张图片，通过控制 background-position 属性配合其他的 css 文件可以实现截取某个数字展示的效果。有点像滚轮密码锁。</p>
-<p><img src="../../../../assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/924356a188a6133db4ad57c169097c5553e331a8a14c2d379cbc24b4346a82d6.png" alt="picture 5">  </p>
-<p><img src="../../../../assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/7b13f98902d2beac854701829b70a1d9818093c1e6fbf0ca548caad7d13b586e.png" alt="picture 6">  </p>
+<p><img src="../../../../assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/924356a188a6133db4ad57c169097c5553e331a8a14c2d379cbc24b4346a82d6.png" alt="picture 5" /></p>
+<p><img src="../../../../assets/%E9%9B%B6%E7%A2%8E/%E7%88%AC%E8%99%AB/%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB/7b13f98902d2beac854701829b70a1d9818093c1e6fbf0ca548caad7d13b586e.png" alt="picture 6" /></p>
 <p>并且在不同时候刷新页面，得到的图片是不同的，进一步增加了爬虫的复杂度。</p>
 <p>监控页面的节点变化发现，目标节点部分从服务器发送到浏览器便一直都保持不变，这意味着从数据到图片的转换是在服务器后台完成的，而不是前端浏览器的 Javascript 脚本控制的。</p>
 <blockquote>
@@ -355,7 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB"><span class="nav-number">1.</span> <span class="nav-text">某售房平台的房价爬虫</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%90%E5%94%AE%E6%88%BF%E5%B9%B3%E5%8F%B0%E7%9A%84%E6%88%BF%E4%BB%B7%E7%88%AC%E8%99%AB"><span class="nav-number">1.</span> <span class="nav-text"> 某售房平台的房价爬虫</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

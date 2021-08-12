@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"doge-liang.github.io","root":"/doge-liang-notebook/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="vscode-代码模板打开配置窗口路径：File &gt; Preferences &gt; User Snippets    编写配置文件实例： 12345678910111213141516&amp;#123;    &quot;blog header&quot;: &amp;#123;        &quot;prefix&quot;: &quot;blogheader&quot;,        &amp;qu">
+  <meta name="description" content="vscode-代码模板  打开配置窗口 路径：File &gt; Preferences &gt; User Snippets   编写配置文件 实例： 12345678910111213141516&amp;#123;    &quot;blog header&quot;: &amp;#123;        &quot;prefix&quot;: &quot;blogheader&quot;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vscode-代码模板">
 <meta property="og:url" content="https://doge-liang.github.io/doge-liang-notebook/post/%E5%B7%A5%E5%85%B7/vscode/vscode-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/">
 <meta property="og:site_name" content="doge-liang-notebook">
-<meta property="og:description" content="vscode-代码模板打开配置窗口路径：File &gt; Preferences &gt; User Snippets    编写配置文件实例： 12345678910111213141516&amp;#123;    &quot;blog header&quot;: &amp;#123;        &quot;prefix&quot;: &quot;blogheader&quot;,        &amp;qu">
+<meta property="og:description" content="vscode-代码模板  打开配置窗口 路径：File &gt; Preferences &gt; User Snippets   编写配置文件 实例： 12345678910111213141516&amp;#123;    &quot;blog header&quot;: &amp;#123;        &quot;prefix&quot;: &quot;blogheader&quot;,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://doge-liang.github.io/doge-liang-notebook/assets/%E5%B7%A5%E5%85%B7/vscode/vscode-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/eaa49c4b6792cb5091227b561aea6f77d0a2c20fa4333aa89b1552db49e0ddf6.png">
 <meta property="article:published_time" content="2020-05-30T16:00:00.000Z">
@@ -266,19 +266,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="vscode-代码模板"><a href="#vscode-代码模板" class="headerlink" title="vscode-代码模板"></a>vscode-代码模板</h2><h3 id="打开配置窗口"><a href="#打开配置窗口" class="headerlink" title="打开配置窗口"></a>打开配置窗口</h3><p>路径：File &gt; Preferences &gt; User Snippets</p>
-<p><img src="../../../../assets/%E5%B7%A5%E5%85%B7/vscode/vscode-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/eaa49c4b6792cb5091227b561aea6f77d0a2c20fa4333aa89b1552db49e0ddf6.png" alt="picture 28">  </p>
-<h3 id="编写配置文件"><a href="#编写配置文件" class="headerlink" title="编写配置文件"></a>编写配置文件</h3><p>实例：</p>
+        <h2 id="vscode-代码模板"><a class="markdownIt-Anchor" href="#vscode-代码模板"></a> vscode-代码模板</h2>
+<h3 id="打开配置窗口"><a class="markdownIt-Anchor" href="#打开配置窗口"></a> 打开配置窗口</h3>
+<p>路径：File &gt; Preferences &gt; User Snippets</p>
+<p><img src="../../../../assets/%E5%B7%A5%E5%85%B7/vscode/vscode-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/eaa49c4b6792cb5091227b561aea6f77d0a2c20fa4333aa89b1552db49e0ddf6.png" alt="picture 28" /></p>
+<h3 id="编写配置文件"><a class="markdownIt-Anchor" href="#编写配置文件"></a> 编写配置文件</h3>
+<p>实例：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;blog header&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;prefix&quot;</span>: <span class="string">&quot;blogheader&quot;</span>,</span><br><span class="line">        <span class="attr">&quot;body&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;---&quot;</span>,</span><br><span class="line">            <span class="string">&quot;title: $&#123;1:$&#123;TM_FILENAME_BASE&#125;&#125;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;date: $&#123;CURRENT_YEAR&#125;-$&#123;CURRENT_MONTH&#125;-$&#123;CURRENT_DATE&#125;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;tags: [$2]&quot;</span>,</span><br><span class="line">            <span class="string">&quot;categories: &quot;</span>,</span><br><span class="line">            <span class="string">&quot;    - [$3]&quot;</span>,</span><br><span class="line">            <span class="string">&quot;---&quot;</span>,</span><br><span class="line">            <span class="string">&quot;# $0&quot;</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;insert blog header&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>下面说明各项作用：</p>
-<h4 id="prefix"><a href="#prefix" class="headerlink" title="prefix"></a>prefix</h4><p>触发前缀，代码模板的前置引导；</p>
-<h4 id="body"><a href="#body" class="headerlink" title="body"></a>body</h4><p>实际插入的代码片段，一行一个字符串，组成一个数组</p>
-<h5 id="指针跳转顺序"><a href="#指针跳转顺序" class="headerlink" title="指针跳转顺序"></a>指针跳转顺序</h5><p><code>$1</code> , <code>$2</code> , 数字代表指针跳转顺序， <code>$0</code> ，代表最后指针所处的位置；</p>
-<h5 id="默认值-placeholder"><a href="#默认值-placeholder" class="headerlink" title="默认值 placeholder"></a>默认值 placeholder</h5><p><code>$&#123;1: placeholder&#125;</code> ，数字代表指针跳转顺序，后面的文字代表默认值；</p>
-<h5 id="可选项-choice"><a href="#可选项-choice" class="headerlink" title="可选项 choice"></a>可选项 choice</h5><p><code>$&#123;1|one, two, three|&#125;</code> ，数字代表指针跳转顺序，后面的各项代表可选的输入项；</p>
-<h5 id="常用变量汇总"><a href="#常用变量汇总" class="headerlink" title="常用变量汇总"></a>常用变量汇总</h5><ul>
-<li><p>常用变量</p>
+<h4 id="prefix"><a class="markdownIt-Anchor" href="#prefix"></a> prefix</h4>
+<p>触发前缀，代码模板的前置引导；</p>
+<h4 id="body"><a class="markdownIt-Anchor" href="#body"></a> body</h4>
+<p>实际插入的代码片段，一行一个字符串，组成一个数组</p>
+<h5 id="指针跳转顺序"><a class="markdownIt-Anchor" href="#指针跳转顺序"></a> 指针跳转顺序</h5>
+<p><code>$1</code> , <code>$2</code> , 数字代表指针跳转顺序， <code>$0</code> ，代表最后指针所处的位置；</p>
+<h5 id="默认值-placeholder"><a class="markdownIt-Anchor" href="#默认值-placeholder"></a> 默认值 placeholder</h5>
+<p><code>$&#123;1: placeholder&#125;</code> ，数字代表指针跳转顺序，后面的文字代表默认值；</p>
+<h5 id="可选项-choice"><a class="markdownIt-Anchor" href="#可选项-choice"></a> 可选项 choice</h5>
+<p><code>$&#123;1|one, two, three|&#125;</code> ，数字代表指针跳转顺序，后面的各项代表可选的输入项；</p>
+<h5 id="常用变量汇总"><a class="markdownIt-Anchor" href="#常用变量汇总"></a> 常用变量汇总</h5>
+<ul>
+<li>
+<p>常用变量</p>
 <ul>
 <li><code>TM_SELECTED_TEXT</code> 当前选中内容或空字符串</li>
 <li><code>TM_CURRENT_LINE</code> 当前行内容</li>
@@ -292,7 +301,8 @@
 <li><code>CLIPBOARD</code> 当前剪切板内容</li>
 </ul>
 </li>
-<li><p>日期和时间相关变量</p>
+<li>
+<p>日期和时间相关变量</p>
 <ul>
 <li><code>CURRENT_YEAR</code> 当前年</li>
 <li><code>CURRENT_YEAR_SHORT</code> 当前年后两位</li>
@@ -309,9 +319,11 @@
 </li>
 </ul>
 <p>还可以用正则表达式格式化输出</p>
-<h4 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h4><p>如果配置好后，代码模板没有生效，有可能时 vscode 的对应文件的 quickSuggestions 没开。<br>打开方式： <code>ctrl</code> + <code>shift</code> + <code>P</code> 在弹出的命令检索框上搜索 <code>settings json</code> 得到 vscode 的 settings.json 文档<br>在文档内插入：</p>
+<h4 id="补充说明"><a class="markdownIt-Anchor" href="#补充说明"></a> 补充说明</h4>
+<p>如果配置好后，代码模板没有生效，有可能时 vscode 的对应文件的 quickSuggestions 没开。<br />
+打开方式： <code>ctrl</code> + <code>shift</code> + <code>P</code> 在弹出的命令检索框上搜索 <code>settings json</code> 得到 vscode 的 settings.json 文档<br />
+在文档内插入：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;[markdown]&quot;: &#123;</span><br><span class="line">    &quot;editor.quickSuggestions&quot;: true</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
 <p>需要什么语言的支持，就在中括号内输入什么语言，还可以添加自定义的文件支持，比如对 <code>xxx.todo</code> ：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;[todo]&quot;:&#123;</span><br><span class="line">    &quot;editor.quickSuggestions&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -399,7 +411,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.</span> <span class="nav-text">vscode-代码模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E9%85%8D%E7%BD%AE%E7%AA%97%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">打开配置窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">编写配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prefix"><span class="nav-number">1.2.1.</span> <span class="nav-text">prefix</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#body"><span class="nav-number">1.2.2.</span> <span class="nav-text">body</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E8%B7%B3%E8%BD%AC%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">指针跳转顺序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC-placeholder"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">默认值 placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E9%A1%B9-choice"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">可选项 choice</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%8F%98%E9%87%8F%E6%B1%87%E6%80%BB"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">常用变量汇总</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.3.</span> <span class="nav-text">补充说明</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.</span> <span class="nav-text"> vscode-代码模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E9%85%8D%E7%BD%AE%E7%AA%97%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text"> 打开配置窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text"> 编写配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prefix"><span class="nav-number">1.2.1.</span> <span class="nav-text"> prefix</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#body"><span class="nav-number">1.2.2.</span> <span class="nav-text"> body</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E8%B7%B3%E8%BD%AC%E9%A1%BA%E5%BA%8F"><span class="nav-number">1.2.2.1.</span> <span class="nav-text"> 指针跳转顺序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E5%80%BC-placeholder"><span class="nav-number">1.2.2.2.</span> <span class="nav-text"> 默认值 placeholder</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AF%E9%80%89%E9%A1%B9-choice"><span class="nav-number">1.2.2.3.</span> <span class="nav-text"> 可选项 choice</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%8F%98%E9%87%8F%E6%B1%87%E6%80%BB"><span class="nav-number">1.2.2.4.</span> <span class="nav-text"> 常用变量汇总</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 补充说明</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
