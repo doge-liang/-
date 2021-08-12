@@ -737,84 +737,6 @@ C++中数组名表示的是数组首位的地址值，例如：a==&amp;a[0]，a+
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-18 10:53:37" itemprop="dateModified" datetime="2021-03-18T10:53:37+08:00">2021-03-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/doge-liang-notebook/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="sql-初级使用"><a class="markdownIt-Anchor" href="#sql-初级使用"></a> SQL 初级使用</h2>
-<h3 id="增删改查"><a class="markdownIt-Anchor" href="#增删改查"></a> 增删改查</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>切换到某个数据库</span><br><span class="line">USE [DataBaseName];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>设置字符集</span><br><span class="line"><span class="keyword">SET</span> [ColumnName] utf8;</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>简单查询</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> [TableName];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>条件查询</span><br><span class="line"><span class="keyword">SELECT</span> [ColumnName,...] <span class="keyword">FROM</span> [TableName] <span class="keyword">WHERE</span> [ColumnName [<span class="operator">&gt;</span> <span class="operator">=</span> <span class="operator">&lt;</span> <span class="operator">&lt;&gt;</span> <span class="operator">&gt;=</span> <span class="operator">&lt;=</span> ?] [<span class="keyword">BETWEEN</span> ? <span class="keyword">AND</span> ?] [<span class="keyword">LIKE</span> <span class="string">&#x27;regex&#x27;</span>] [<span class="keyword">IN</span> (?, ?, ?, ...)] [<span class="keyword">IS</span> <span class="keyword">NULL</span>]] <span class="keyword">AND</span> ... <span class="keyword">OR</span> ... ;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>合并重复值</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> ...;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>按某列排序</span><br><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">ORDER</span> <span class="keyword">BY</span> [ColumnNames, ...] [<span class="keyword">DESC</span> <span class="operator">/</span><span class="operator">/</span>是否降序];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>限制最大返回行数</span><br><span class="line"><span class="keyword">SELECT</span> TOP [MaxSize]...;</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>删除记录</span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> [TableName] <span class="keyword">WHERE</span> [ColumnName] <span class="operator">=</span> ?;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>删除所有记录而保留表结构</span><br><span class="line"><span class="keyword">DELETE</span> <span class="operator">*</span> <span class="keyword">FROM</span> [TableName];</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>更改某几列的值</span><br><span class="line">UPDATE [TableName] <span class="keyword">SET</span> [ColumnName1] <span class="operator">=</span> [value1], ... <span class="keyword">WHERE</span> some_column <span class="operator">=</span> some_value;</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>插入</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> [TableName][ColumnNames, ...] <span class="keyword">VALUES</span> [<span class="keyword">value</span>, ...];</span><br></pre></td></tr></table></figure>
-<h3 id="创建删除修改指令"><a class="markdownIt-Anchor" href="#创建删除修改指令"></a> 创建/删除/修改指令</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE [DataBaseName];</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [TableName];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>创建索引列</span><br><span class="line"><span class="keyword">CREATE</span> INDEX [IndexName] <span class="keyword">ON</span> [TableName]([ColumnName,...] [<span class="keyword">DESC</span> <span class="operator">/</span><span class="operator">/</span>指定降序]);</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>创建唯一索引</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> INDEX ...;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> DATABASE [DataBaseName];</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> [TableName];</span><br><span class="line"><span class="keyword">DROP</span> INDEX [IndexName] <span class="keyword">ON</span> [TableName];</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
-      <meta itemprop="name" content="doge-liang">
-      <meta itemprop="description" content="什么都记的笔记本">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="doge-liang-notebook">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/doge-liang-notebook/post/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">数据库应用</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">2020-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2021-03-18 10:53:44" itemprop="dateModified" datetime="2021-03-18T10:53:44+08:00">2021-03-18</time>
               </span>
             <span class="post-meta-item">
@@ -878,6 +800,84 @@ C++中数组名表示的是数组首位的地址值，例如：a==&amp;a[0]，a+
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> [ColumnName] <span class="keyword">AS</span> [AliasName] <span class="keyword">FROM</span> [TableName];</span><br></pre></td></tr></table></figure>
 <p>表别名：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> [ColumnName] <span class="keyword">FROM</span> [TableName] <span class="keyword">AS</span> [AliasName];</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
+      <meta itemprop="name" content="doge-liang">
+      <meta itemprop="description" content="什么都记的笔记本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="doge-liang-notebook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/doge-liang-notebook/post/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">数据库应用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">2020-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-18 10:53:37" itemprop="dateModified" datetime="2021-03-18T10:53:37+08:00">2021-03-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/doge-liang-notebook/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="sql-初级使用"><a class="markdownIt-Anchor" href="#sql-初级使用"></a> SQL 初级使用</h2>
+<h3 id="增删改查"><a class="markdownIt-Anchor" href="#增删改查"></a> 增删改查</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>切换到某个数据库</span><br><span class="line">USE [DataBaseName];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>设置字符集</span><br><span class="line"><span class="keyword">SET</span> [ColumnName] utf8;</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>简单查询</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> [TableName];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>条件查询</span><br><span class="line"><span class="keyword">SELECT</span> [ColumnName,...] <span class="keyword">FROM</span> [TableName] <span class="keyword">WHERE</span> [ColumnName [<span class="operator">&gt;</span> <span class="operator">=</span> <span class="operator">&lt;</span> <span class="operator">&lt;&gt;</span> <span class="operator">&gt;=</span> <span class="operator">&lt;=</span> ?] [<span class="keyword">BETWEEN</span> ? <span class="keyword">AND</span> ?] [<span class="keyword">LIKE</span> <span class="string">&#x27;regex&#x27;</span>] [<span class="keyword">IN</span> (?, ?, ?, ...)] [<span class="keyword">IS</span> <span class="keyword">NULL</span>]] <span class="keyword">AND</span> ... <span class="keyword">OR</span> ... ;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>合并重复值</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> ...;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>按某列排序</span><br><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">ORDER</span> <span class="keyword">BY</span> [ColumnNames, ...] [<span class="keyword">DESC</span> <span class="operator">/</span><span class="operator">/</span>是否降序];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>限制最大返回行数</span><br><span class="line"><span class="keyword">SELECT</span> TOP [MaxSize]...;</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>删除记录</span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> [TableName] <span class="keyword">WHERE</span> [ColumnName] <span class="operator">=</span> ?;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>删除所有记录而保留表结构</span><br><span class="line"><span class="keyword">DELETE</span> <span class="operator">*</span> <span class="keyword">FROM</span> [TableName];</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>更改某几列的值</span><br><span class="line">UPDATE [TableName] <span class="keyword">SET</span> [ColumnName1] <span class="operator">=</span> [value1], ... <span class="keyword">WHERE</span> some_column <span class="operator">=</span> some_value;</span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>插入</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> [TableName][ColumnNames, ...] <span class="keyword">VALUES</span> [<span class="keyword">value</span>, ...];</span><br></pre></td></tr></table></figure>
+<h3 id="创建删除修改指令"><a class="markdownIt-Anchor" href="#创建删除修改指令"></a> 创建/删除/修改指令</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE [DataBaseName];</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [TableName];</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>创建索引列</span><br><span class="line"><span class="keyword">CREATE</span> INDEX [IndexName] <span class="keyword">ON</span> [TableName]([ColumnName,...] [<span class="keyword">DESC</span> <span class="operator">/</span><span class="operator">/</span>指定降序]);</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>创建唯一索引</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> INDEX ...;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> DATABASE [DataBaseName];</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> [TableName];</span><br><span class="line"><span class="keyword">DROP</span> INDEX [IndexName] <span class="keyword">ON</span> [TableName];</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1420,7 +1420,7 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-18 11:08:31" itemprop="dateModified" datetime="2021-03-18T11:08:31+08:00">2021-03-18</time>
+                <time title="Modified: 2021-08-13 02:46:58" itemprop="dateModified" datetime="2021-08-13T02:46:58+08:00">2021-08-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1724,7 +1724,7 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-18 11:07:26" itemprop="dateModified" datetime="2021-03-18T11:07:26+08:00">2021-03-18</time>
+                <time title="Modified: 2021-08-13 02:46:55" itemprop="dateModified" datetime="2021-08-13T02:46:55+08:00">2021-08-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2077,7 +2077,7 @@ f(x) = p(x) + R(x)
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-18 11:08:45" itemprop="dateModified" datetime="2021-03-18T11:08:45+08:00">2021-03-18</time>
+                <time title="Modified: 2021-08-13 02:59:08" itemprop="dateModified" datetime="2021-08-13T02:59:08+08:00">2021-08-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2609,6 +2609,11 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
+
 
   
 
