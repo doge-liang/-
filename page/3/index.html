@@ -204,6 +204,267 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E5%B7%A5%E5%85%B7/docker/docker%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
+      <meta itemprop="name" content="doge-liang">
+      <meta itemprop="description" content="什么都记的笔记本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="doge-liang-notebook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/doge-liang-notebook/post/%E5%B7%A5%E5%85%B7/docker/docker%E5%AE%B9%E5%99%A8%E9%83%A8%E7%BD%B2%E9%94%99%E8%AF%AF%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">docker容器部署错误分析</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-07 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-07T00:00:00+08:00">2021-04-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-08-13 01:45:43" itemprop="dateModified" datetime="2021-08-13T01:45:43+08:00">2021-08-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/doge-liang-notebook/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/doge-liang-notebook/categories/%E5%B7%A5%E5%85%B7/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="docker容器部署错误分析"><a class="markdownIt-Anchor" href="#docker容器部署错误分析"></a> docker容器部署错误分析</h2>
+<p>今天用 docker-compose 部署 Hyperledger Fabric 网络的时候， <a target="_blank" rel="noopener" href="http://peer1.subscriber.mynetwork.com">peer1.subscriber.mynetwork.com</a> 容器出现了 Exited(1) 的错误。</p>
+<p>使用 <code>docker logs &lt;container_name&gt;</code> 命令，列出了这个容器的日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2021-04-07 03:49:03.657 UTC [main] InitCmd -&gt; ERRO 001 Cannot run peer because error when setting up MSP of type bccsp from directory &#x2F;etc&#x2F;hyperledger&#x2F;fabric&#x2F;msp: administrators must be declared when no admin ou classification is set</span><br></pre></td></tr></table></figure>
+<p>查看 <code>/etc/hyperledger/fabric/msp</code> 目录挂载在哪里，将目录结构和另一个成功启动的节点对比，发现少了一个 <code>msp/config.yaml</code> 文件，然后将 <code>config.yaml</code> 文件从外面的 <code>msp</code> 目录复制进来就好了，像另一个节点那样操作。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/uncategorized/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
+      <meta itemprop="name" content="doge-liang">
+      <meta itemprop="description" content="什么都记的笔记本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="doge-liang-notebook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/doge-liang-notebook/post/uncategorized/" class="post-title-link" itemprop="url">Untitled</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-05 13:42:34 / Modified: 14:32:25" itemprop="dateCreated datePublished" datetime="2021-04-05T13:42:34+08:00">2021-04-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          {"Organizations":[{"Name":"OrdererOrg","ID":"OrdererMSP","MSPDir":"../organizations/ordererOrganizations/example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('OrdererMSP.member')"},"Writers":{"Type":"Signature","Rule":"OR('OrdererMSP.member')"},"Admins":{"Type":"Signature","Rule":"OR('OrdererMSP.admin')"}},"OrdererEndpoints":["orderer.example.com:7050"]},{"Name":"Org1MSP","ID":"Org1MSP","MSPDir":"../organizations/peerOrganizations/org1.example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"},"Writers":{"Type":"Signature","Rule":"OR('Org1MSP.admin', 'Org1MSP.client')"},"Admins":{"Type":"Signature","Rule":"OR('Org1MSP.admin')"},"Endorsement":{"Type":"Signature","Rule":"OR('Org1MSP.peer')"}},"AnchorPeers":[{"Host":"peer0.org1.example.com","Port":7051}]},{"Name":"Org2MSP","ID":"Org2MSP","MSPDir":"../organizations/peerOrganizations/org2.example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('Org2MSP.admin', 'Org2MSP.peer', 'Org2MSP.client')"},"Writers":{"Type":"Signature","Rule":"OR('Org2MSP.admin', 'Org2MSP.client')"},"Admins":{"Type":"Signature","Rule":"OR('Org2MSP.admin')"},"Endorsement":{"Type":"Signature","Rule":"OR('Org2MSP.peer')"}},"AnchorPeers":[{"Host":"peer0.org2.example.com","Port":9051}]}],"Capabilities":{"Channel":{"V2_0":true},"Orderer":{"V2_0":true},"Application":{"V2_0":true}},"Application":{"Organizations":null,"Policies":{"Readers":{"Type":"ImplicitMeta","Rule":"ANY Readers"},"Writers":{"Type":"ImplicitMeta","Rule":"ANY Writers"},"Admins":{"Type":"ImplicitMeta","Rule":"MAJORITY Admins"},"LifecycleEndorsement":{"Type":"ImplicitMeta","Rule":"MAJORITY Endorsement"},"Endorsement":{"Type":"ImplicitMeta","Rule":"MAJORITY Endorsement"}},"Capabilities":{"V2_0":true}},"Orderer":{"OrdererType":"etcdraft","Addresses":["orderer1.example.com:6050"],"EtcdRaft":{"Consenters":[{"Host":"orderer.example.com","Port":7050,"ClientTLSCert":"../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt","ServerTLSCert":"../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt"}]},"BatchTimeout":"2s","BatchSize":{"MaxMessageCount":10,"AbsoluteMaxBytes":"99 MB","PreferredMaxBytes":"512 KB"},"Organizations":null,"Policies":{"Readers":{"Type":"ImplicitMeta","Rule":"ANY Readers"},"Writers":{"Type":"ImplicitMeta","Rule":"ANY Writers"},"Admins":{"Type":"ImplicitMeta","Rule":"MAJORITY Admins"},"BlockValidation":{"Type":"ImplicitMeta","Rule":"ANY Writers"}}},"Channel":{"Policies":{"Readers":{"Type":"ImplicitMeta","Rule":"ANY Readers"},"Writers":{"Type":"ImplicitMeta","Rule":"ANY Writers"},"Admins":{"Type":"ImplicitMeta","Rule":"MAJORITY Admins"}},"Capabilities":{"V2_0":true}},"Profiles":{"TwoOrgsOrdererGenesis":{"Policies":{"Readers":{"Type":"ImplicitMeta","Rule":"ANY Readers"},"Writers":{"Type":"ImplicitMeta","Rule":"ANY Writers"},"Admins":{"Type":"ImplicitMeta","Rule":"MAJORITY Admins"}},"Capabilities":{"V2_0":true},"Orderer":{"OrdererType":"etcdraft","Addresses":["orderer1.example.com:6050"],"EtcdRaft":{"Consenters":[{"Host":"orderer.example.com","Port":7050,"ClientTLSCert":"../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt","ServerTLSCert":"../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt"}]},"BatchTimeout":"2s","BatchSize":{"MaxMessageCount":10,"AbsoluteMaxBytes":"99 MB","PreferredMaxBytes":"512 KB"},"Organizations":[{"Name":"OrdererOrg","ID":"OrdererMSP","MSPDir":"../organizations/ordererOrganizations/example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('OrdererMSP.member')"},"Writers":{"Type":"Signature","Rule":"OR('OrdererMSP.member')"},"Admins":{"Type":"Signature","Rule":"OR('OrdererMSP.admin')"}},"OrdererEndpoints":["orderer.example.com:7050"]}],"Policies":{"Readers":{"Type":"ImplicitMeta","Rule":"ANY Readers"},"Writers":{"Type":"ImplicitMeta","Rule":"ANY Writers"},"Admins":{"Type":"ImplicitMeta","Rule":"MAJORITY Admins"},"BlockValidation":{"Type":"ImplicitMeta","Rule":"ANY Writers"}},"Capabilities":{"V2_0":true}},"Consortiums":{"SampleConsortium":{"Organizations":[{"Name":"Org1MSP","ID":"Org1MSP","MSPDir":"../organizations/peerOrganizations/org1.example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"},"Writers":{"Type":"Signature","Rule":"OR('Org1MSP.admin', 'Org1MSP.client')"},"Admins":{"Type":"Signature","Rule":"OR('Org1MSP.admin')"},"Endorsement":{"Type":"Signature","Rule":"OR('Org1MSP.peer')"}},"AnchorPeers":[{"Host":"peer0.org1.example.com","Port":7051}]},{"Name":"Org2MSP","ID":"Org2MSP","MSPDir":"../organizations/peerOrganizations/org2.example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('Org2MSP.admin', 'Org2MSP.peer', 'Org2MSP.client')"},"Writers":{"Type":"Signature","Rule":"OR('Org2MSP.admin', 'Org2MSP.client')"},"Admins":{"Type":"Signature","Rule":"OR('Org2MSP.admin')"},"Endorsement":{"Type":"Signature","Rule":"OR('Org2MSP.peer')"}},"AnchorPeers":[{"Host":"peer0.org2.example.com","Port":9051}]}]}}},"TwoOrgsChannel":{"Consortium":"SampleConsortium","Policies":{"Readers":{"Type":"ImplicitMeta","Rule":"ANY Readers"},"Writers":{"Type":"ImplicitMeta","Rule":"ANY Writers"},"Admins":{"Type":"ImplicitMeta","Rule":"MAJORITY Admins"}},"Capabilities":{"V2_0":true},"Application":{"Organizations":[{"Name":"Org1MSP","ID":"Org1MSP","MSPDir":"../organizations/peerOrganizations/org1.example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"},"Writers":{"Type":"Signature","Rule":"OR('Org1MSP.admin', 'Org1MSP.client')"},"Admins":{"Type":"Signature","Rule":"OR('Org1MSP.admin')"},"Endorsement":{"Type":"Signature","Rule":"OR('Org1MSP.peer')"}},"AnchorPeers":[{"Host":"peer0.org1.example.com","Port":7051}]},{"Name":"Org2MSP","ID":"Org2MSP","MSPDir":"../organizations/peerOrganizations/org2.example.com/msp","Policies":{"Readers":{"Type":"Signature","Rule":"OR('Org2MSP.admin', 'Org2MSP.peer', 'Org2MSP.client')"},"Writers":{"Type":"Signature","Rule":"OR('Org2MSP.admin', 'Org2MSP.client')"},"Admins":{"Type":"Signature","Rule":"OR('Org2MSP.admin')"},"Endorsement":{"Type":"Signature","Rule":"OR('Org2MSP.peer')"}},"AnchorPeers":[{"Host":"peer0.org2.example.com","Port":9051}]}],"Policies":{"Readers":{"Type":"ImplicitMeta","Rule":"ANY Readers"},"Writers":{"Type":"ImplicitMeta","Rule":"ANY Writers"},"Admins":{"Type":"ImplicitMeta","Rule":"MAJORITY Admins"},"LifecycleEndorsement":{"Type":"ImplicitMeta","Rule":"MAJORITY Endorsement"},"Endorsement":{"Type":"ImplicitMeta","Rule":"MAJORITY Endorsement"}},"Capabilities":{"V2_0":true}}}}}
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E5%8C%BA%E5%9D%97%E9%93%BE/Hyperledger-Fabric/msp-%E6%88%90%E5%91%98%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
+      <meta itemprop="name" content="doge-liang">
+      <meta itemprop="description" content="什么都记的笔记本">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="doge-liang-notebook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/doge-liang-notebook/post/%E5%8C%BA%E5%9D%97%E9%93%BE/Hyperledger-Fabric/msp-%E6%88%90%E5%91%98%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/" class="post-title-link" itemprop="url">MSP 成员服务提供者</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-05 00:00:00 / Modified: 11:39:42" itemprop="dateCreated datePublished" datetime="2021-04-05T00:00:00+08:00">2021-04-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/doge-liang-notebook/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/doge-liang-notebook/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/Hyperledger-Fabric/" itemprop="url" rel="index"><span itemprop="name">Hyperledger Fabric</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="msp-成员服务提供者"><a class="markdownIt-Anchor" href="#msp-成员服务提供者"></a> MSP 成员服务提供者</h2>
+<h3 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h3>
+<p>MSP（成员服务提供者）是一种机制，他为区块链网络内的组织成员提供身份认证的功能。因为 Fabric 是一个认证性的网络，网络中的通信和交易是建立在可信身份的基础上的。他让用户不用暴露自己的私钥而能够让网络中的成员识别他的身份。</p>
+<p>具体来说，用户要想加入一个网络进行交易，需要满足以下条件：</p>
+<ol>
+<li>拥有被信任的 CA 颁发的身份；</li>
+<li>成为一个被网络成员认可和认可的 组织 的成员。MSP将身份与组织的成员资格联系在一起。成员资格是通过将成员的公钥(也称为证书、签名证书或签证)添加到组织的MSP来实现的。</li>
+<li>将MSP添加到网络上的一个联盟 或者通道。</li>
+<li>确保MSP包括在网络中的<a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/zh_CN/release-2.2/policies/policies.html">策略</a>定义。</li>
+</ol>
+<h3 id="msp-域"><a class="markdownIt-Anchor" href="#msp-域"></a> MSP 域</h3>
+<p>网络中， MSP 出现在两个位置：</p>
+<ul>
+<li>在参与者节点本地（<strong>本地 MSP</strong>）</li>
+<li>在通道配置中（<strong>通道 MSP</strong>）</li>
+</ul>
+<p>它们的使用范围不同，每个 MSP 列出特定管理级别上的角色和权限。</p>
+<h4 id="本地-msp"><a class="markdownIt-Anchor" href="#本地-msp"></a> 本地 MSP</h4>
+<p>本地MSP是为<strong>客户端</strong>和<strong>节点</strong>( peer 节点和排序节点)定义的。 本地 MSPs 定义节点的权限(例如，谁是可以操作节点的 peer 节点管理员)。客户端的本地 MSP ，允许用户作为一个通道成员或作为一个特定角色的所有者，如组织管理者，在其交易(如链码交易)时进行身份验证从而进入系统，例如，进行配置交易。</p>
+<p><strong>每个节点都必须定义一个本地 MSP</strong>，因为它定义了在该级别上谁拥有管理权或参与权( peer 节点管理员不一定是通道管理员，反之亦然)。这允许在通道上下文之外对成员消息进行身份验证，并定义特定节点(例如，能够在 peer 节点上安装链码的节点)的权限。请注意，一个组织可以拥有一个或多个节点。 MSP 定义了组织管理员。组织、组织的管理员、节点的管理员以及节点本身都应该具有相同的信任根。</p>
+<p>排序节点的本地MSP也在节点的文件系统上定义，并且只应用于该节点。与 peer 节点一样，排序节点也由单个组织拥有，因此有一个MSP来列出它信任的参与者角色或节点。</p>
+<h4 id="通道-msp"><a class="markdownIt-Anchor" href="#通道-msp"></a> 通道 MSP</h4>
+<p>通道 MSP 在通道层面上定义了管理权和参与权。应用程序通道上的 peer 节点和排序节点共用通道 MSP 的相同视图，因此能够正确地对通道参与者进行身份验证。这意味着，如果组织希望加入通道，则需要在通道配置中添加包含组织成员信任链的MSP。否则，来自该组织身份的交易将被拒绝。本地 MSP 表现为<strong>文件系统上的文件夹结构</strong>，而通道 MSP 则<strong>在通道配置中被描述</strong>。</p>
+<p>通道 MSP 识别谁在通道层次拥有权限。通道 MSP 定义通道成员(本身是 MSP )的身份和通道级策略的执行之间的 关系 。通道MSP包含通道成员组织的 MSP 。</p>
+<p>每个参与通道的组织都必须为其定义一个MSP。</p>
+<p>系统通道MSP包括参与排序服务的所有组织的MSP。</p>
+<ul>
+<li>本地MSP仅在其应用的节点或用户的文件系统上定义。每个节点只有一个本地MSP；</li>
+<li>由于通道MSP对通道内的所有节点都可用，它们在通道配置中逻辑上仅定义一次，而通道MSP也在通道中的每个节点的文件系统上实例化，并通过共识保持同步；</li>
+</ul>
+<p><img src="../../../../assets/%E5%8C%BA%E5%9D%97%E9%93%BE/Hyperledger%20Fabric/MSP%E6%88%90%E5%91%98%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/42c2719412b013108ddd074bac2351aed145979e59286659dbd0444252014d0f.png" alt="picture 2" /></p>
+<h3 id="组织和-msp"><a class="markdownIt-Anchor" href="#组织和-msp"></a> 组织和 MSP</h3>
+<p>组织可以作为 MSP 的身份标识，像用户组一样管理组织成员。同时，一个组织也可以被划分为多个<strong>组织单元( ou )</strong>，每个单元有一定职责（ <code>affiliations</code> ）。例如，组织 <code>Org1</code> 可能同时拥有 <code>org1.Manufacturing</code> 和 <code>org1.Distribution</code> 组织单元，这两个组织单元反映了互相隔离的流水线。这样使用组织单元可以让策略的定义更简单，在组织内部实现更细粒度的访问控制。或者使用基于属性进行访问控制的智能合约。 <code>OU</code> 字段是可选的，如果不使用 MSP 中的所有身份都被 CA 视为组织成员。</p>
+<h5 id="节点组织单元和-msp"><a class="markdownIt-Anchor" href="#节点组织单元和-msp"></a> 节点组织单元和 MSP</h5>
+<p>一类特殊的组织单元，有时也被称为<strong>节点组织单元</strong>，用于为角色赋予身份。这些节点组织单元被定义在 <code>FABRIC_CFG_PATH/msp/config.yaml</code> 配置文件中。这些单元成员被认为是 MSP 所代表的组织的一部分，通过节点组织单元，您可以实现更细粒度的背书策略，该策略要求 Org1 的 peer 节点(而不是 Org1 的任何成员)为交易背书。</p>
+<p>例如我们可以这样定义节点组织单元：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">NodeOUs:</span></span><br><span class="line">  <span class="attr">Enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">ClientOUIdentifier:</span></span><br><span class="line">    <span class="attr">Certificate:</span> <span class="string">cacerts/ca.sampleorg-cert.pem</span></span><br><span class="line">    <span class="attr">OrganizationalUnitIdentifier:</span> <span class="string">client</span></span><br><span class="line">  <span class="attr">PeerOUIdentifier:</span></span><br><span class="line">    <span class="attr">Certificate:</span> <span class="string">cacerts/ca.sampleorg-cert.pem</span></span><br><span class="line">    <span class="attr">OrganizationalUnitIdentifier:</span> <span class="string">peer</span></span><br><span class="line">  <span class="attr">AdminOUIdentifier:</span></span><br><span class="line">    <span class="attr">Certificate:</span> <span class="string">cacerts/ca.sampleorg-cert.pem</span></span><br><span class="line">    <span class="attr">OrganizationalUnitIdentifier:</span> <span class="string">admin</span></span><br><span class="line">  <span class="attr">OrdererOUIdentifier:</span></span><br><span class="line">    <span class="attr">Certificate:</span> <span class="string">cacerts/ca.sampleorg-cert.pem</span></span><br><span class="line">    <span class="attr">OrganizationalUnitIdentifier:</span> <span class="string">orderer</span></span><br></pre></td></tr></table></figure>
+<p>以上代码定义了四个节点组织单元：</p>
+<ul>
+<li>client</li>
+<li>peer</li>
+<li>admin</li>
+<li>orderer</li>
+</ul>
+<p>经过上述配置，当使用 Fabric CA 或 SDK 注册带有 CA 的用户时，这些角色和 <code>OU</code> 属性会被分配给一个身份标识。随后 <code>enroll</code> 用户命令会在用户的 <code>/msp</code> 文件夹中生成证书。</p>
+<p><img src="../../../../assets/%E5%8C%BA%E5%9D%97%E9%93%BE/Hyperledger%20Fabric/MSP%E6%88%90%E5%91%98%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/e905af5fd5cacc68043ed9b7fe374adb2685be11bcbca4f4b16b8874a981911e.png" alt="picture 3" /></p>
+<p>生成的角色和OU属性在位于 <code>/signcerts</code> 文件夹中的 X.509 签名证书中可见。 <code>ROLE</code> 属性被标识为 <code>hf.Type</code> ，其指的是参与者在其组织中的角色(例如，指定参与者是一个 <code>peer</code> 节点)。请参阅以下来自签名证书的代码片段，它显示了角色和 ou 在证书中是如何表示的。</p>
+<p><img src="../../../../assets/%E5%8C%BA%E5%9D%97%E9%93%BE/Hyperledger%20Fabric/MSP%E6%88%90%E5%91%98%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E8%80%85/78c16733d6209be583fbf1273cae814c7200f2ef12448c310f727310fc1a82df.png" alt="picture 4" /></p>
+<p>另外，节点是否有权管理特定资源，还要看实际分配权力的 <strong>策略</strong> 如何编写，如果策略要求持有 <code>Org1.Manufaturing</code> msp 的管理者（即 <code>admin</code> 角色）才有权向通道添加新的组织，那么单单持有其中一个 msp 是无权限的。</p>
+<h3 id="msp-结构"><a class="markdownIt-Anchor" href="#msp-结构"></a> MSP 结构</h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E5%8C%BA%E5%9D%97%E9%93%BE/Hyperledger-Fabric/fabric-ca%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1430,287 +1691,11 @@ IP/FQDN+PORT of peer to be accessed</p>
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
-      <meta itemprop="name" content="doge-liang">
-      <meta itemprop="description" content="什么都记的笔记本">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="doge-liang-notebook">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/doge-liang-notebook/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/linux-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">Linux 环境配置</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-29 00:00:00 / Modified: 13:11:41" itemprop="dateCreated datePublished" datetime="2021-03-29T00:00:00+08:00">2021-03-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/doge-liang-notebook/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/doge-liang-notebook/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="linux-环境配置"><a class="markdownIt-Anchor" href="#linux-环境配置"></a> Linux 环境配置</h2>
-<p>Linux 有两种方式来进行环境的配置：</p>
-<ul>
-<li>交互式 login shell ：这种方式取得 bash 命令需要登录操作，比如系统刚刚开机时候需要输入用户密码才能够取得的相关命令；</li>
-<li>非交互式 non-login shell ：这种方式取得的 bash 命令则不需要进行登陆操作，比如登录系统之后执行的 <code>bash</code> 命令相当于打开了一个子 bash 环境；</li>
-</ul>
-<p><img src="../../../../assets/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/Linux%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/5c04f725230db3370ca9045c2adef6263fc3056f538f89c3019727833f304dee.png" alt="picture 1" /></p>
-<h3 id="交互式-login-shell"><a class="markdownIt-Anchor" href="#交互式-login-shell"></a> 交互式 login shell</h3>
-<p>交互式 login shell 一般只会读取：</p>
-<ol>
-<li><code>/etc/profile</code> ：全局配置文件；</li>
-<li><code>[~/.bash_profile | ~/.bash_login | ~/.profile]</code> ：用户自己的配置文件，这三个只读取一个，按照顺序读取，先命中的则读取；</li>
-</ol>
-<p>而通过打开上述的文件我们发现，他们还会判断另外一下配置文件是否存在，存在则执行；比如， <code>~/.bash_profile</code> 会去读取 <code>~/.bashrc</code> ，而 <code>~/.bashrc</code> 会去读取 <code>/etc/bashrc</code> 等等。</p>
-<p>总结下来如下图所示，实线的方向是系统会自动读取的流程，虚线是文件中调用的配置文件；一般我们都会修改 <code>~/.bashrc</code> 进行用户专属的配置，方式管理混乱；</p>
-<p><img src="../../../../assets/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/linux/Linux%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/439e6b62c3c44825587086a54f5c4439ae12663278834307f4664fad3cd13383.png" alt="picture 2" /></p>
-<h3 id="非交互式-non-login-shell"><a class="markdownIt-Anchor" href="#非交互式-non-login-shell"></a> 非交互式 non-login shell</h3>
-<p>非交互式 non-login shell 只会读取 <code>~/.bashrc</code> 文件，所以和上面的其实差不多；</p>
-<h3 id="通过-su-命令看到以上两者的区别"><a class="markdownIt-Anchor" href="#通过-su-命令看到以上两者的区别"></a> 通过 su 命令看到以上两者的区别</h3>
-<blockquote>
-<p><code>su</code> - 运行替换用户和组标识的 shell<br />
-用法： <code>su [OPTION]... [-] [USER [ARG]...]</code><br />
-参数：</p>
-<pre><code>-, -l, --login
-      使得shell为可登录的shell
-
-`-c`, --commmand=COMMAND
-       传递单个COMMAND给-c的shell.
-
--f, --fast
-       传递-f给shell(针对csh或tcsh)
-
--m, --preserve-environment
-       不重置环境变量
-
--p     与-m同
-
--s, --shell=SHELL
-       如果/etc/shells允许,运行SHELL.
-
---help 显示帮助并退出
-
---version
-       输出版本信息并退出
-</code></pre>
-</blockquote>
-<p>通过 <code>su root</code> 切换到 root 用户是按照 non-login shell 的方式切换到 root 的 shell 的；<br />
-通过 <code>su -</code> 或 <code>su - root</code> 切换到 root 用户是按照 login shell 的方式切换到 root 用户的 shell 的；<br />
-由于这两种方式加载配置文件的方式不一样，所以他们最后的 <code>env</code> 环境变量打印出来并不一样。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E5%B7%A5%E5%85%B7/vpn/v2ray/linux%E4%BD%BF%E7%94%A8v2ray/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
-      <meta itemprop="name" content="doge-liang">
-      <meta itemprop="description" content="什么都记的笔记本">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="doge-liang-notebook">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/doge-liang-notebook/post/%E5%B7%A5%E5%85%B7/vpn/v2ray/linux%E4%BD%BF%E7%94%A8v2ray/" class="post-title-link" itemprop="url">linux使用v2ray</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-28 00:00:00 / Modified: 23:51:17" itemprop="dateCreated datePublished" datetime="2021-03-28T00:00:00+08:00">2021-03-28</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/doge-liang-notebook/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/doge-liang-notebook/categories/%E5%B7%A5%E5%85%B7/vpn/" itemprop="url" rel="index"><span itemprop="name">vpn</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/doge-liang-notebook/categories/%E5%B7%A5%E5%85%B7/vpn/v2ray/" itemprop="url" rel="index"><span itemprop="name">v2ray</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="linux使用v2ray"><a class="markdownIt-Anchor" href="#linux使用v2ray"></a> linux使用v2ray</h2>
-<p>下载好 v2ray 软件之后，设置好 <code>config.json</code> ，启动 v2ray 。</p>
-<p>然后配置 <code>http_proxy</code> 和 <code>https_proxy</code> 两个环境变量，可以使用 <code>export</code> 进行临时的配置，也可以写进 <code>~/.bashrc</code> 里面，每次启动终端自动执行。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doge-liang.github.io/doge-liang-notebook/post/%E5%8C%BA%E5%9D%97%E9%93%BE/hyperledger-fabric-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/doge-liang-notebook/images/avatar.gif">
-      <meta itemprop="name" content="doge-liang">
-      <meta itemprop="description" content="什么都记的笔记本">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="doge-liang-notebook">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/doge-liang-notebook/post/%E5%8C%BA%E5%9D%97%E9%93%BE/hyperledger-fabric-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E8%B8%A9%E5%9D%91/" class="post-title-link" itemprop="url">Hyperledger Fabric 环境搭建踩坑</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-03-27 00:00:00 / Modified: 18:48:51" itemprop="dateCreated datePublished" datetime="2021-03-27T00:00:00+08:00">2021-03-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/doge-liang-notebook/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="hyperledger-fabric-环境搭建踩坑"><a class="markdownIt-Anchor" href="#hyperledger-fabric-环境搭建踩坑"></a> Hyperledger Fabric 环境搭建踩坑</h2>
-<h3 id="网络启动失败"><a class="markdownIt-Anchor" href="#网络启动失败"></a> 网络启动失败</h3>
-<p>在跑 <code>. ./init.sh</code> 脚本的时候，运行到第五步，创建通道并将节点加入通道的时候，出现了如下错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">5.Create &amp; Join Channel</span><br><span class="line">######## - (COMMON) setup variables - ########</span><br><span class="line">~&#x2F;workspace&#x2F;channel-artifacts ~&#x2F;workspace</span><br><span class="line">Error: failed to create deliver client for orderer: orderer client failed to connect to localhost:7050: failed to create new connection: connection error: desc &#x3D; &quot;transport: error while dialing: dial tcp 127.0.0.1:7050: connect: connection refused&quot;</span><br><span class="line">~&#x2F;workspace</span><br><span class="line">######## - (ORG1) join channel - ########</span><br><span class="line">Error: error getting endorser client for channel: endorser client failed to connect to localhost:7051: failed to create new connection: connection error: desc &#x3D; &quot;transport: error while dialing: dial tcp 127.0.0.1:7051: connect: connection refused&quot;</span><br><span class="line">######## - (ORG1) update anchor - ########</span><br><span class="line">2021-03-27 13:40:35.708 CST [channelCmd] InitCmdFactory -&gt; INFO 001 Endorser and orderer connections initialized</span><br><span class="line">Error: Error getting broadcast client: orderer client failed to connect to localhost:7050: failed to create new connection: connection error: desc &#x3D; &quot;transport: error while dialing: dial tcp 127.0.0.1:7050: connect: connection refused&quot;</span><br><span class="line">######## - (ORG2) join channel - ########</span><br><span class="line">Error: error getting endorser client for channel: endorser client failed to connect to localhost:9051: failed to create new connection: connection error: desc &#x3D; &quot;transport: error while dialing: dial tcp 127.0.0.1:9051: connect: connection refused&quot;</span><br><span class="line">######## - (ORG2) update anchor - ########</span><br><span class="line">2021-03-27 13:40:35.785 CST [channelCmd] InitCmdFactory -&gt; INFO 001 Endorser and orderer connections initialized</span><br><span class="line">Error: Error getting broadcast client: orderer client failed to connect to localhost:7050: failed to create new connection: connection error: desc &#x3D; &quot;transport: error while dialing: dial tcp 127.0.0.1:7050: connect: connection refused&quot;</span><br></pre></td></tr></table></figure>
-<p>意思是建立到本地的 7050 等等端口的 tcp 时失败了，原因是拒绝访问。</p>
-<p>原因暂时不明，但是我运行了 <code>. ./shutdown.sh</code> 和 <code>. ./teardown.sh</code> 两个脚本，把整个网络都删掉了，再重新执行接下来的脚本就搞定了。</p>
-<p>原因不明，但是先记录一下这两个脚本都做了什么吧，以后再出现了就再分析。</p>
-<p>/root/workspace/shutdown.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Clearing&quot;</span></span><br><span class="line">docker rm -f `docker ps -qa`</span><br><span class="line">docker rmi -f $(docker images | awk <span class="string">&#x27;($1 ~ /dev-peer.*/) &#123;print $3&#125;&#x27;</span>)</span><br><span class="line">docker volume prune -f</span><br><span class="line">docker network prune -f</span><br><span class="line"></span><br><span class="line">rm -rf system-genesis-block/*.block</span><br><span class="line">rm -rf channel-artifacts</span><br><span class="line">rm -rf organizations/peerOrganizations</span><br><span class="line">rm -rf organizations/ordererOrganizations</span><br><span class="line">rm -rf tmp</span><br><span class="line">sudo rm -rf organizations/fabric-ca/org1/*</span><br><span class="line">sudo rm -rf organizations/fabric-ca/org2/*</span><br><span class="line">sudo rm -rf organizations/fabric-ca/ordererOrg/*</span><br></pre></td></tr></table></figure>
-<p>/root/workspace/teardown.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Shutdown CA Services, Peers and Orderer in Network&quot;</span></span><br><span class="line">COMPOSE_FILE_CA=docker/docker-compose-ca.yaml</span><br><span class="line">COMPOSE_FILE_BASE=docker/docker-compose-ABC.yaml</span><br><span class="line">COMPOSE_FILE_COUCH=docker/docker-compose-couch.yaml</span><br><span class="line">CA_IMAGE_TAG=<span class="variable">$&#123;CA_VERSION&#125;</span> </span><br><span class="line">IMAGE_TAG=<span class="variable">$&#123;FABRIC_VERSION&#125;</span> </span><br><span class="line">DB_IMAGE_TAG=<span class="variable">$&#123;OTHER_VERSION&#125;</span> </span><br><span class="line">docker-compose -f <span class="variable">$&#123;COMPOSE_FILE_CA&#125;</span> -f <span class="variable">$&#123;COMPOSE_FILE_BASE&#125;</span> -f <span class="variable">$&#123;COMPOSE_FILE_COUCH&#125;</span> down</span><br><span class="line"><span class="built_in">echo</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/doge-liang-notebook/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/doge-liang-notebook/">1</a><a class="page-number" href="/doge-liang-notebook/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/doge-liang-notebook/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/doge-liang-notebook/page/17/">17</a><a class="extend next" rel="next" href="/doge-liang-notebook/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/doge-liang-notebook/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/doge-liang-notebook/">1</a><a class="page-number" href="/doge-liang-notebook/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/doge-liang-notebook/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/doge-liang-notebook/page/18/">18</a><a class="extend next" rel="next" href="/doge-liang-notebook/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1776,20 +1761,20 @@ IP/FQDN+PORT of peer to be accessed</p>
       <div class="site-state-item site-state-posts">
           <a href="/doge-liang-notebook/archives/">
         
-          <span class="site-state-item-count">169</span>
+          <span class="site-state-item-count">172</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/doge-liang-notebook/categories/">
           
-        <span class="site-state-item-count">65</span>
+        <span class="site-state-item-count">69</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/doge-liang-notebook/tags/">
           
-        <span class="site-state-item-count">73</span>
+        <span class="site-state-item-count">77</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
